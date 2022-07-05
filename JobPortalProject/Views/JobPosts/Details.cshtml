@@ -1,0 +1,190 @@
+﻿@model JobPortalProject.JobPost
+
+@{
+    ViewBag.Title = "Details";
+    if (Session["UserID"] == null)
+    {
+
+        Response.Redirect("~/Home/Login", false);
+    }
+
+}
+
+<h2>Details</h2>
+
+@if (Session["UserName"] != null && Session["UserType"].ToString() == "admin")
+{
+    <h3>" @Session["UserFirstName"].ToString()  (@Session["UserType"].ToString()) "</h3>
+}
+@{
+    var type = @Session["UserType"].ToString();
+}
+
+<div>
+    <h4>JobPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplyEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplyEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumQualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumQualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Required_Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Required_Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website_Company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website_Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Facebook__Company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Facebook__Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Google_USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Google_USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LINKEDIN_USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LINKEDIN_USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TWITTER_USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TWITTER_USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_ExpiryDate)
+        </dt>
+
+        <dd>
+           @Model.Job_ExpiryDate.ToString("MMMM dd, yyyy")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_DatePosted)
+        </dt>
+
+        <dd>
+            @Model.Job_DatePosted.ToString("MMMM dd, yyyy")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (type == "admin")
+    {
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_JobPost })
+    }
+    @Html.ActionLink("  Back to List", "Index")
+</p>
+
+

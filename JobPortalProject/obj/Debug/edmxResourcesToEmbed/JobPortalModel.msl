@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobPortalModelStoreContainer" CdmEntityContainer="JobPortalEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="JobPortalModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="admin_ID" ColumnName="admin_ID" />
+          <ScalarProperty Name="admin_Username" ColumnName="admin_Username" />
+          <ScalarProperty Name="admin_Password" ColumnName="admin_Password" />
+          <ScalarProperty Name="admin_Image" ColumnName="admin_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="JobPortalModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_DOB" ColumnName="User_DOB" />
+          <ScalarProperty Name="User_LastName" ColumnName="User_LastName" />
+          <ScalarProperty Name="Usre_FirstName" ColumnName="Usre_FirstName" />
+          <ScalarProperty Name="User_Contact" ColumnName="User_Contact" />
+          <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+          <ScalarProperty Name="User_Gender" ColumnName="User_Gender" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Username" ColumnName="User_Username" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobApplicants">
+      <EntityTypeMapping TypeName="JobPortalModel.JobApplicant">
+        <MappingFragment StoreEntitySet="JobApplicants">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPosts">
+      <EntityTypeMapping TypeName="JobPortalModel.JobPost">
+        <MappingFragment StoreEntitySet="JobPost">
+          <ScalarProperty Name="Available" ColumnName="Available" />
+          <ScalarProperty Name="Job_DatePosted" ColumnName="Job_DatePosted" />
+          <ScalarProperty Name="Job_ExpiryDate" ColumnName="Job_ExpiryDate" />
+          <ScalarProperty Name="TWITTER_USERNAME" ColumnName="TWITTER_USERNAME" />
+          <ScalarProperty Name="LINKEDIN_USERNAME" ColumnName="LINKEDIN_USERNAME" />
+          <ScalarProperty Name="Google_USERNAME" ColumnName="Google_USERNAME" />
+          <ScalarProperty Name="Facebook__Company" ColumnName="Facebook__Company" />
+          <ScalarProperty Name="Website_Company" ColumnName="Website_Company" />
+          <ScalarProperty Name="Required_Skills" ColumnName="Required_Skills" />
+          <ScalarProperty Name="MinimumQualification" ColumnName="MinimumQualification" />
+          <ScalarProperty Name="MinimumExperience" ColumnName="MinimumExperience" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Job_Description" ColumnName="Job_Description" />
+          <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ApplyEmail" ColumnName="ApplyEmail" />
+          <ScalarProperty Name="ID_JobPost" ColumnName="ID_JobPost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

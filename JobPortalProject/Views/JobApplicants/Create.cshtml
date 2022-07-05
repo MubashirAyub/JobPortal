@@ -1,0 +1,119 @@
+﻿@model JobPortalProject.JobApplicant
+
+@{
+    ViewBag.Title = "Create";
+   
+}
+
+<h2>Create</h2>
+
+@if (Session["UserName"] != null && Session["UserType"].ToString() == "admin")
+{
+    <h3>" @Session["UserFirstName"].ToString()  (@Session["UserType"].ToString()) "</h3>
+
+
+}
+
+
+@using (Html.BeginForm(Html.BeginForm("Create", "JobApplicants", FormMethod.Post, new { enctype = "multipart/form-data" })))
+{
+
+    @Html.AntiForgeryToken()
+
+    if (Session["UserName"] != null)
+    {
+        var takejobtitle = @Session["forjobtitle"];
+        var takeFirstName = @Session["UserFirstName"];
+
+        var takeUserId = @Session["UserID"];
+        var takecontact = @Session["UserContact"];
+
+    <div class="form-horizontal">
+        <h4>JobApplicant</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = takeUserId } })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ApplicantName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ApplicantName, new { htmlAttributes = new { @class = "form-control", @Value = takeFirstName } })
+                @Html.ValidationMessageFor(model => model.ApplicantName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JobTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = takejobtitle } })
+                @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CV, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CV, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.LabelFor(model => model.CV, htmlAttributes: new { @class = "control-label col-md-2" })
+                <input type="file" name="file" />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control", @Value = takecontact } })
+                @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+}
+@{
+    var type = @Session["UserType"].ToString();
+}
+@if (type == "admin")
+{
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+else
+{
+    <div>
+        @Html.ActionLink("Back to Applied List", "Apply")
+    </div>
+}
+

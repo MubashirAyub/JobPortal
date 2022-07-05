@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="admin_ID" />
+    </Key>
+    <Property Name="admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="JobPortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Users" EntityType="JobPortalModel.User" />
+    <EntitySet Name="JobApplicants" EntityType="JobPortalModel.JobApplicant" />
+    <EntitySet Name="JobPosts" EntityType="JobPortalModel.JobPost" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Contact" Type="Int32" Nullable="false" />
+    <Property Name="Usre_FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobApplicant">
+    <Key>
+      <PropertyRef Name="ApplicantID" />
+    </Key>
+    <Property Name="ApplicantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ApplicantName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="JobPost">
+    <Key>
+      <PropertyRef Name="ID_JobPost" />
+    </Key>
+    <Property Name="ID_JobPost" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplyEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Job_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumExperience" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumQualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Required_Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Website_Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook__Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Google_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LINKEDIN_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TWITTER_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Job_ExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="Job_DatePosted" Type="DateTime" Precision="0" />
+    <Property Name="Available" Type="Boolean" />
+  </EntityType>
+</Schema>

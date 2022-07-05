@@ -1,0 +1,203 @@
+﻿
+
+@model IEnumerable<JobPortalProject.JobPost>
+
+@{
+    ViewBag.Title = "Index";
+
+
+}
+
+<h2>Index</h2>
+
+
+@if (Session["UserName"] != null && Session["UserType"].ToString() == "admin")
+{
+    <h3>" @Session["UserFirstName"].ToString()  (@Session["UserType"].ToString()) "</h3>
+}
+@{
+    var type = @Session["UserType"].ToString();
+}
+
+
+@if (type == "admin")
+{
+    <p>
+        @Html.ActionLink("Post a Job", "Create")
+    </p>
+}
+
+
+
+
+
+<div class="row">
+    <div class="">
+        <div class="table-responsive table--no-card m-b-30">
+            <div style="width: 2000px; overflow-x: auto;">
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.JobTitle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Location)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.JobType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.JobCategory)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Company_Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Salary)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MinimumExperience)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MinimumQualification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Required_Skills)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Job_ExpiryDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Job_DatePosted)
+                            </th>
+
+                            @if (type == "admin")
+                            {
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ApplyEmail)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Website_Company)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Facebook__Company)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Google_USERNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LINKEDIN_USERNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TWITTER_USERNAME)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Available)
+                                </th>
+
+                            }
+
+
+
+
+                            <th></th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.JobTitle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.JobType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.JobCategory)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Company_Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Salary)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MinimumExperience)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MinimumQualification)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Required_Skills)
+                                </td>
+                                <td>
+
+                                    @item.Job_ExpiryDate.ToString("MMMM dd,yyyy")
+                                </td>
+                                <td>
+                                    @item.Job_DatePosted.ToString("MMMM dd,yyyy")
+                                </td>
+
+                                @if (type == "admin")
+                                {
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ApplyEmail)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Website_Company)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Facebook__Company)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Google_USERNAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LINKEDIN_USERNAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TWITTER_USERNAME)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Available)
+                                    </td>
+                                }
+
+                                <td>
+                                    @if (type == "admin")
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_JobPost });
+                                        @Html.ActionLink("Details", "Details", new { id = item.ID_JobPost });
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_JobPost });
+
+                                    }
+                                    else
+                                    {
+                                        <a href="/JobPosts/Show/@item.JobTitle">Apply</a>
+                                        @Html.ActionLink("  Details", "Details", new { id = item.ID_JobPost });
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+
+</div>

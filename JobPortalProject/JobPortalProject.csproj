@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{527F1FE6-7B03-4A32-9964-BB218F567B91}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JobPortalProject</RootNamespace>
+    <AssemblyName>JobPortalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>JobPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobApplicantsController.cs" />
+    <Compile Include="Controllers\JobPostsController.cs" />
+    <Compile Include="Controllers\SessionAttribute.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JobApplicant.cs">
+      <DependentUpon>JobPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobPortalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobPortalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobPortalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobPortalModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobPortalModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="JobPost.cs">
+      <DependentUpon>JobPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>JobPortalModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\alert.html" />
+    <Content Include="admin\badge.html" />
+    <Content Include="admin\button.html" />
+    <Content Include="admin\calendar.html" />
+    <Content Include="admin\card.html" />
+    <Content Include="admin\chart.html" />
+    <Content Include="admin\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="admin\css\font-face.css" />
+    <Content Include="admin\css\theme.css" />
+    <Content Include="admin\fontawesome.html" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="admin\forget-pass.html" />
+    <Content Include="admin\form.html" />
+    <Content Include="admin\grid.html" />
+    <Content Include="admin\images\bg-title-01.jpg" />
+    <Content Include="admin\images\bg-title-02.jpg" />
+    <Content Include="admin\images\icon\avatar-01.jpg" />
+    <Content Include="admin\images\icon\avatar-02.jpg" />
+    <Content Include="admin\images\icon\avatar-03.jpg" />
+    <Content Include="admin\images\icon\avatar-04.jpg" />
+    <Content Include="admin\images\icon\avatar-05.jpg" />
+    <Content Include="admin\images\icon\avatar-06.jpg" />
+    <Content Include="admin\images\icon\avatar-big-01.jpg" />
+    <Content Include="admin\images\icon\logo-blue.png" />
+    <Content Include="admin\images\icon\logo-mini.png" />
+    <Content Include="admin\images\icon\logo-white.png" />
+    <Content Include="admin\images\icon\logo.png" />
+    <Content Include="admin\images\icon\mylogo.png" />
+    <Content Include="admin\images\icon\mylogo2.png" />
+    <Content Include="admin\images\icon\Untitled-1.jpg" />
+    <Content Include="admin\inbox.html" />
+    <Content Include="admin\index.html" />
+    <Content Include="admin\index2.html" />
+    <Content Include="admin\index3.html" />
+    <Content Include="admin\index4.html" />
+    <Content Include="admin\js\bootstrap-datetimepicker.js" />
+    <Content Include="admin\js\main.js" />
+    <Content Include="admin\js\moment.js" />
+    <Content Include="admin\login.html" />
+    <Content Include="admin\map.html" />
+    <Content Include="admin\media\9606031aabebde32fa96edeff071a132.jpg" />
+    <Content Include="admin\modal.html" />
+    <Content Include="admin\progress-bar.html" />
+    <Content Include="admin\register.html" />
+    <Content Include="admin\switch.html" />
+    <Content Include="admin\tab.html" />
+    <Content Include="admin\table.html" />
+    <Content Include="admin\typo.html" />
+    <Content Include="admin\vendor\animsition\animsition.min.css" />
+    <Content Include="admin\vendor\animsition\animsition.min.js" />
+    <Content Include="admin\vendor\bootstrap-4.1\bootstrap.min.css" />
+    <Content Include="admin\vendor\bootstrap-4.1\bootstrap.min.js" />
+    <Content Include="admin\vendor\bootstrap-4.1\popper.min.js" />
+    <Content Include="admin\vendor\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="admin\vendor\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="admin\vendor\chartjs\Chart.bundle.min.js" />
+    <Content Include="admin\vendor\circle-progress\circle-progress.js" />
+    <Content Include="admin\vendor\circle-progress\circle-progress.min.js" />
+    <Content Include="admin\vendor\countdown\countdowntime.js" />
+    <Content Include="admin\vendor\countdown\jquery.countdown.min.js" />
+    <Content Include="admin\vendor\countdown\moment-timezone-with-data.min.js" />
+    <Content Include="admin\vendor\countdown\moment-timezone.min.js" />
+    <Content Include="admin\vendor\countdown\moment.min.js" />
+    <Content Include="admin\vendor\counter-up\jquery.counterup.min.js" />
+    <Content Include="admin\vendor\counter-up\jquery.waypoints.min.js" />
+    <Content Include="admin\vendor\counter-up\waypoints.min.js" />
+    <Content Include="admin\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="admin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="admin\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="admin\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="admin\vendor\font-awesome-5\css\fontawesome-all.min.css" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-brands-400.svg" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-regular-400.svg" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-solid-900.svg" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\CHANGELOG.txt" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\CONTRIBUTING.txt" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.css" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.min.css" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.min.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.print.css" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\fullcalendar.print.min.css" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\gcal.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\gcal.min.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\lib\moment.min.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\LICENSE.txt" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale-all.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\af.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-dz.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-kw.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-ly.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-ma.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-sa.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar-tn.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ar.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\be.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\bg.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\bs.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ca.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\cs.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\da.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\de-at.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\de-ch.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\de.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\el.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\en-au.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\en-ca.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\en-gb.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\en-ie.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\en-nz.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\es-do.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\es-us.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\es.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\et.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\eu.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\fa.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\fi.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\fr-ca.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\fr-ch.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\fr.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\gl.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\he.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\hi.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\hr.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\hu.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\id.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\is.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\it.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ja.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ka.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\kk.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ko.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\lb.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\lt.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\lv.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\mk.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ms-my.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ms.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\nb.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\nl-be.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\nl.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\nn.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\pl.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\pt-br.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\pt.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ro.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\ru.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sk.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sl.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sq.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sr-cyrl.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sr.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\sv.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\th.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\tr.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\uk.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\vi.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\zh-cn.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\zh-hk.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\locale\zh-tw.js" />
+    <Content Include="admin\vendor\fullcalendar-3.10.0\README.txt" />
+    <Content Include="admin\vendor\jquery-3.2.1.min.js" />
+    <Content Include="admin\vendor\jquery-ui.min.js" />
+    <Content Include="admin\vendor\lightbox2\dist\css\lightbox.css" />
+    <Content Include="admin\vendor\lightbox2\dist\images\close.png" />
+    <Content Include="admin\vendor\lightbox2\dist\images\loading.gif" />
+    <Content Include="admin\vendor\lightbox2\dist\images\next.png" />
+    <Content Include="admin\vendor\lightbox2\dist\images\prev.png" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox.js" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox.min.js" />
+    <Content Include="admin\vendor\lightbox2\src\css\lightbox.css" />
+    <Content Include="admin\vendor\lightbox2\src\images\close.png" />
+    <Content Include="admin\vendor\lightbox2\src\images\loading.gif" />
+    <Content Include="admin\vendor\lightbox2\src\images\next.png" />
+    <Content Include="admin\vendor\lightbox2\src\images\prev.png" />
+    <Content Include="admin\vendor\lightbox2\src\js\lightbox.js" />
+    <Content Include="admin\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="admin\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="admin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="admin\vendor\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="admin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="admin\vendor\progressbar\progressbar.js" />
+    <Content Include="admin\vendor\progressbar\progressbar.min.js" />
+    <Content Include="admin\vendor\select2\select2.min.css" />
+    <Content Include="admin\vendor\select2\select2.min.js" />
+    <Content Include="admin\vendor\slick\ajax-loader.gif" />
+    <Content Include="admin\vendor\slick\fonts\slick.svg" />
+    <Content Include="admin\vendor\slick\slick-theme.css" />
+    <Content Include="admin\vendor\slick\slick.css" />
+    <Content Include="admin\vendor\slick\slick.js" />
+    <Content Include="admin\vendor\slick\slick.min.js" />
+    <Content Include="admin\vendor\smk-accordion\accordion.css" />
+    <Content Include="admin\vendor\smk-accordion\accordion.js" />
+    <Content Include="admin\vendor\smk-accordion\accordion.min.js" />
+    <Content Include="admin\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.brazil.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.europe.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.france.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.germany.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.min.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.russia.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.usa.js" />
+    <Content Include="admin\vendor\vector-map\jquery.vmap.world.js" />
+    <Content Include="admin\vendor\vector-map\jqvmap.min.css" />
+    <Content Include="admin\vendor\wow\animate.css" />
+    <Content Include="admin\vendor\wow\wow.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\easy-pie-chart.css" />
+    <Content Include="Content\css\fontawesome.css" />
+    <Content Include="Content\css\materialdesignicons.min.css" />
+    <Content Include="Content\css\nice-select.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\owl.transitions.css" />
+    <Content Include="Content\css\selectize.css" />
+    <Content Include="Content\css\selectize.default.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\ajax-loader.gif" />
+    <Content Include="Content\fonts\fa-brands-400.svg" />
+    <Content Include="Content\fonts\fa-regular-400.svg" />
+    <Content Include="Content\fonts\fa-solid-900.svg" />
+    <Content Include="Content\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\images\1_zHIeu-lkVnbVNDJu92qmmQ.png" />
+    <Content Include="Content\images\38020947_1907899932604102_3058249252871340032_n.jpg" />
+    <Content Include="Content\images\42_1_contact-us.jpg" />
+    <Content Include="Content\images\app-download-img.png" />
+    <Content Include="Content\images\apple.png" />
+    <Content Include="Content\images\clients\1.png" />
+    <Content Include="Content\images\clients\2.png" />
+    <Content Include="Content\images\clients\3.png" />
+    <Content Include="Content\images\clients\4.png" />
+    <Content Include="Content\images\clients\5.png" />
+    <Content Include="Content\images\clients\6.png" />
+    <Content Include="Content\images\featured-job\img-1.png" />
+    <Content Include="Content\images\featured-job\img-10.png" />
+    <Content Include="Content\images\featured-job\img-2.png" />
+    <Content Include="Content\images\featured-job\img-3.png" />
+    <Content Include="Content\images\featured-job\img-4.png" />
+    <Content Include="Content\images\featured-job\img-5.png" />
+    <Content Include="Content\images\featured-job\img-6.png" />
+    <Content Include="Content\images\featured-job\img-7.png" />
+    <Content Include="Content\images\featured-job\img-8.png" />
+    <Content Include="Content\images\featured-job\img-9.png" />
+    <Content Include="Content\images\google.png" />
+    <Content Include="Content\images\how-it-work\img-1.png" />
+    <Content Include="Content\images\how-it-work\img-2.png" />
+    <Content Include="Content\images\how-it-work\img-3.png" />
+    <Content Include="Content\images\logo-light.png" />
+    <Content Include="Content\images\RPA.png" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\js\contact.js" />
+    <Content Include="Content\js\counter.int.js" />
+    <Content Include="Content\js\home.js" />
+    <Content Include="Content\js\jquery.easing.min.js" />
+    <Content Include="Content\js\jquery.easypiechart.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.nice-select.min.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\plugins.js" />
+    <Content Include="Content\js\scrollspy.min.js" />
+    <Content Include="Content\js\selectize.min.js" />
+    <Content Include="Content\php\contact.php" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Job-Board-Job-Portal-Template\about-us.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-classic-sidebar.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-classic.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-detailed-grid-sidebar.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-detailed-grid.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-details.html" />
+    <Content Include="Job-Board-Job-Portal-Template\blog-left-img.html" />
+    <Content Include="Job-Board-Job-Portal-Template\browse-candidates.html" />
+    <Content Include="Job-Board-Job-Portal-Template\browse-job.html" />
+    <Content Include="Job-Board-Job-Portal-Template\coming-soon.html" />
+    <Content Include="Job-Board-Job-Portal-Template\companies.html" />
+    <Content Include="Job-Board-Job-Portal-Template\contact.html" />
+    <Content Include="Job-Board-Job-Portal-Template\css\inc\images\loading.html" />
+    <Content Include="Job-Board-Job-Portal-Template\css\plugins.css" />
+    <Content Include="Job-Board-Job-Portal-Template\css\skin\skin-1.css" />
+    <Content Include="Job-Board-Job-Portal-Template\css\style.css" />
+    <Content Include="Job-Board-Job-Portal-Template\css\templete.css" />
+    <Content Include="Job-Board-Job-Portal-Template\error-404.html" />
+    <Content Include="Job-Board-Job-Portal-Template\images\background\bg2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\background\bg4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\background\bg7.html" />
+    <Content Include="Job-Board-Job-Portal-Template\images\background\bg8.html" />
+    <Content Include="Job-Board-Job-Portal-Template\images\banner\bnr1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\banner\bnr2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\default\thum1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\default\thum2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\default\thum3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\default\thum4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\grid\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\grid\pic2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\grid\pic3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\grid\pic4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\recent-blog\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\recent-blog\pic2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\blog\recent-blog\pic3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\categories-bg.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic5.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic6.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic7.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\city\pic8.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\favicon.ico" />
+    <Content Include="Job-Board-Job-Portal-Template\images\favicon.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic5.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic6.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic7.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic8.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\gallery\pic9.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\line.html" />
+    <Content Include="Job-Board-Job-Portal-Template\images\line1.html" />
+    <Content Include="Job-Board-Job-Portal-Template\images\lines.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\loading.svg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo-white.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo\icon1.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo\logo\logo1.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo\logo\logo2.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo\logo\logo3.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\logo\logo\logo4.png" />
+    <Content Include="Job-Board-Job-Portal-Template\images\main-slider\slide1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\main-slider\slide2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\our-work\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\our-work\pic4.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\testimonials\pic1.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\testimonials\pic2.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\images\testimonials\pic3.jpg" />
+    <Content Include="Job-Board-Job-Portal-Template\index-2.html" />
+    <Content Include="Job-Board-Job-Portal-Template\index-3.html" />
+    <Content Include="Job-Board-Job-Portal-Template\index.html" />
+    <Content Include="Job-Board-Job-Portal-Template\job-detail.html" />
+    <Content Include="Job-Board-Job-Portal-Template\js\custom.js" />
+    <Content Include="Job-Board-Job-Portal-Template\js\dz.ajax.js" />
+    <Content Include="Job-Board-Job-Portal-Template\js\dz.carousel.js" />
+    <Content Include="Job-Board-Job-Portal-Template\js\jquery.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\js\recaptcha\api.js" />
+    <Content Include="Job-Board-Job-Portal-Template\login.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\animate\animate.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\bootstrap\js\popper.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\countdown\jquery.countdown.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\counter\counterup.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\counter\waypoints-min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\datepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\imagesloaded\imagesloaded.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\magnific-popup\magnific-popup.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\magnific-popup\magnific-popup.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\masonry\masonry-3.1.4.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\masonry\masonry.filter.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\owl-carousel\owl.carousel.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\owl-carousel\owl.carousel.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\owl-carousel\owl.video.play.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\paroller\skrollr.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-bg_glass_55_fbf9ee_1x400.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-bg_glass_95_fef1ec_1x400.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-icons_222222_256x240.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-icons_2e83ff_256x240.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-icons_454545_256x240.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-icons_888888_256x240.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\images\ui-icons_cd0a0a_256x240.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\rangeslider.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\rangeslider\rangeslider.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution-addons\countdown\revolution.addon.countdown.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution-addons\typewriter\js\revolution.addon.typewriter.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\coloredbg.png" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\gridtile.png" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\gridtile_3x3.png" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\gridtile_white.png" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\assets\loader.gif" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\css\closedhand.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\css\layers.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\css\navigation.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\css\openhand.html" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\css\settings.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\fonts\revicons\revicons90c6.svg" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\scroll\scrollbar.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\scroll\scrollbar.min.js" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\fonts\themify9f24.svg" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\themify-icons.css" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\wow\wow.js" />
+    <Content Include="Job-Board-Job-Portal-Template\portfolio-grid-2.html" />
+    <Content Include="Job-Board-Job-Portal-Template\portfolio-grid-3.html" />
+    <Content Include="Job-Board-Job-Portal-Template\portfolio-grid-4.html" />
+    <Content Include="Job-Board-Job-Portal-Template\register.html" />
+    <Content Include="Job-Board-Job-Portal-Template\submit-resume.html" />
+    <Content Include="JobPortalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>JobPortalModel.Context.cs</LastGenOutput>
+      <DependentUpon>JobPortalModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="JobPortalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JobPortalModel.edmx</DependentUpon>
+      <LastGenOutput>JobPortalModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Login_v11\css\main.css" />
+    <Content Include="Login_v11\css\util.css" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Login_v11\fonts\montserrat\OFL.txt" />
+    <Content Include="Login_v11\fonts\raleway\OFL.txt" />
+    <Content Include="Login_v11\images\icons\favicon.ico" />
+    <Content Include="Login_v11\images\icons\icon-google.png" />
+    <Content Include="Login_v11\images\img-01.png" />
+    <Content Include="Login_v11\index.html" />
+    <Content Include="Login_v11\js\main.js" />
+    <Content Include="Login_v11\vendor\animate\animate.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login_v11\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login_v11\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login_v11\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login_v11\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login_v11\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login_v11\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login_v11\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login_v11\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login_v11\vendor\select2\select2.css" />
+    <Content Include="Login_v11\vendor\select2\select2.js" />
+    <Content Include="Login_v11\vendor\select2\select2.min.css" />
+    <Content Include="Login_v11\vendor\select2\select2.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="JobPortalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JobPortalModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="JobPortalModel.edmx.diagram">
+      <DependentUpon>JobPortalModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\css\style.css.map" />
+    <Content Include="Content\fonts\fa-brands-400.eot" />
+    <Content Include="Content\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\fonts\fa-brands-400.woff" />
+    <Content Include="Content\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\fonts\fa-regular-400.eot" />
+    <Content Include="Content\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\fonts\fa-regular-400.woff" />
+    <Content Include="Content\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\fonts\fa-solid-900.eot" />
+    <Content Include="Content\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\fonts\fa-solid-900.woff" />
+    <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Content\scss\_blog.scss" />
+    <Content Include="Content\scss\_bootstrap_custom.scss" />
+    <Content Include="Content\scss\_candidates.scss" />
+    <Content Include="Content\scss\_components.scss" />
+    <Content Include="Content\scss\_contact.scss" />
+    <Content Include="Content\scss\_employers.scss" />
+    <Content Include="Content\scss\_footer.scss" />
+    <Content Include="Content\scss\_general.scss" />
+    <Content Include="Content\scss\_helper.scss" />
+    <Content Include="Content\scss\_home.scss" />
+    <Content Include="Content\scss\_jobs.scss" />
+    <Content Include="Content\scss\_menu.scss" />
+    <Content Include="Content\scss\_pages.scss" />
+    <Content Include="Content\scss\_subscribe.scss" />
+    <Content Include="Content\scss\_variables.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login_v11\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Login_v11\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Login_v11\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login_v11\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="Login_v11\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login_v11\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-100italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-200italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-600italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-900italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="admin\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="admin\README.md" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-brands-400.eot" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-brands-400.ttf" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-brands-400.woff" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-brands-400.woff2" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-regular-400.eot" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-regular-400.ttf" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-regular-400.woff" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-regular-400.woff2" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-solid-900.eot" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-solid-900.ttf" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-solid-900.woff" />
+    <Content Include="admin\vendor\font-awesome-5\webfonts\fa-solid-900.woff2" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="admin\vendor\lightbox2\dist\js\lightbox.min.map" />
+    <Content Include="admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="admin\vendor\slick\config.rb" />
+    <Content Include="admin\vendor\slick\fonts\slick.eot" />
+    <Content Include="admin\vendor\slick\fonts\slick.ttf" />
+    <Content Include="admin\vendor\slick\fonts\slick.woff" />
+    <Content Include="admin\vendor\slick\slick-theme.less" />
+    <Content Include="admin\vendor\slick\slick-theme.scss" />
+    <Content Include="admin\vendor\slick\slick.less" />
+    <Content Include="admin\vendor\slick\slick.scss" />
+    <Content Include="admin\~%24README.md" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\fontawesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\fonts\revicons\revicons90c6.eot" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\fonts\revicons\revicons90c6.ttf" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\revolution\revolution\fonts\revicons\revicons90c6.woff" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\fonts\themify9f24.eot" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\fonts\themify9f24.ttf" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\fonts\themify9f24.woff" />
+    <Content Include="Job-Board-Job-Portal-Template\plugins\themify\fonts\themifyd41d.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\JobApplicants\Create.cshtml" />
+    <Content Include="Views\JobApplicants\Delete.cshtml" />
+    <Content Include="Views\JobApplicants\Details.cshtml" />
+    <Content Include="Views\JobApplicants\Edit.cshtml" />
+    <Content Include="Views\JobApplicants\Index.cshtml" />
+    <Content Include="Views\JobApplicants\Apply.cshtml" />
+    <Content Include="Views\JobPosts\Create.cshtml" />
+    <Content Include="Views\JobPosts\Delete.cshtml" />
+    <Content Include="Views\JobPosts\Details.cshtml" />
+    <Content Include="Views\JobPosts\Edit.cshtml" />
+    <Content Include="Views\JobPosts\Index.cshtml" />
+    <Content Include="Views\Home\StartPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApplicantsCV\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\SessionAttribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57865</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57865/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
